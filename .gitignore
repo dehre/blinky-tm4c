@@ -1,0 +1,14 @@
+.ccsproject
+.cproject
+.project
+blinky.launch
+org.*
+macros.ini_initial
+target_config.ccxml
+
+Debug/*
+Release/*
+.vscode/*
+
+!.vscode/c_cpp_properties.json
+!.vscode/tasks.json

@@ -1,0 +1,29 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compile Debug",
+            "type": "shell",
+            "command": "cd Debug; /Applications/ti/ccs1031/ccs/utils/bin/gmake -k all",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+        },
+        {
+            "label": "Compile Release",
+            "type": "shell",
+            "command": "cd Release; /Applications/ti/ccs1031/ccs/utils/bin/gmake -k all",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            }
+        },
+    ]
+}

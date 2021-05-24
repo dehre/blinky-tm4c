@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "name": "default",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/Applications/ti/ccs1031/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include",
+        "~/ti/tivaware_c_series_2_1_4_178"
+      ],
+      "cStandard": "gnu17"
+    }
+  ],
+  "version": 4
+}
