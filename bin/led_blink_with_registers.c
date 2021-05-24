@@ -22,31 +22,33 @@ static void __error__(char *pcFilename, uint32_t ui32Line)
 static int main()
 {
     volatile uint32_t ui32_loop;
-    volatile unsigned long delay;
 
-    SYSCTL_RCGCGPIO_R |= 0x01;        // 1) activate clock for Port A
-    delay = SYSCTL_RCGCGPIO_R;        // allow time for clock to start
-                                      // 2) no need to unlock PA2
-    GPIO_PORTA_PCTL_R &= ~0x00000F00; // 3) regular GPIO
-    GPIO_PORTA_AMSEL_R &= ~0x04;      // 4) disable analog function on PA2
-    GPIO_PORTA_DIR_R |= 0x04;         // 5) set direction to output
-    GPIO_PORTA_AFSEL_R &= ~0x04;      // 6) regular port function
-    GPIO_PORTA_DEN_R |= 0x04;         // 7) enable digital port
+    SYSCTL_RCGCGPIO_R |= 0x01;              // 1) activate clock for Port A         -- GPIO Run Mode Clock Gating Control Register
+    while ((SYSCTL_PRGPIO_R & 0x01) == 0)   // allow time for clock to start        -- GPIO Peripheral Ready Register
+    {
+    }
+
+                                            // 2) no need to unlock PA2             -- GPIO Lock Register
+    GPIO_PORTA_AMSEL_R &= ~0x04;            // 3) disable analog function on PA2    -- GPIO Analog Mode Select Register
+    GPIO_PORTA_PCTL_R &= ~0x00000F00;       // 4) regular GPIO                      -- GPIO Port Control Register
+    GPIO_PORTA_DIR_R |= 0x04;               // 5) set direction to output           -- GPIO Direction Register
+    GPIO_PORTA_AFSEL_R &= ~0x04;            // 6) regular port function             -- GPIO Alternate Function Select Register
+    GPIO_PORTA_DEN_R |= 0x04;               // 7) enable digital port               -- GPIO Digital Enable Register
 
     while (1)
     {
-        // Make PA2 high
+        // make PA2 high
         GPIO_PORTA_DATA_R |= 0x04;
 
-        // Delay for a bit
+        // delay for a bit
         for (ui32_loop = 0; ui32_loop < 1000000; ui32_loop++)
         {
         }
 
-        // Make PA2 low
+        // make PA2 low
         GPIO_PORTA_DATA_R &= ~0x04;
 
-        // Delay for a bit
+        // delay for a bit
         for (ui32_loop = 0; ui32_loop < 1000000; ui32_loop++)
         {
         }
