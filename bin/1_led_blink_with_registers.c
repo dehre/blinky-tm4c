@@ -2,6 +2,7 @@
 //
 // Blink the LED on PA2, manipulating registers directly.
 // For reference: https://users.ece.utexas.edu/~valvano/Volume1/E-Book/C8_SwitchLED.htm
+// Date: 24-05-2021
 //
 //*****************************************************************************
 

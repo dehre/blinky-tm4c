@@ -2,6 +2,7 @@
 //
 // Blink the LED on PA2 using driverlib.
 // Just a modified version of the original blinky.c
+// Date: 24-05-2021
 //
 //*****************************************************************************
 
