@@ -6,7 +6,7 @@
         {
             "label": "Compile Debug",
             "type": "shell",
-            "command": "cd Debug; /Applications/ti/ccs1031/ccs/utils/bin/gmake -k all",
+            "command": "cd Debug; /Applications/ti/ccs/utils/bin/gmake -k all",
             "presentation": {
                 "reveal": "always",
                 "panel": "shared"
@@ -19,7 +19,7 @@
         {
             "label": "Compile Release",
             "type": "shell",
-            "command": "cd Release; /Applications/ti/ccs1031/ccs/utils/bin/gmake -k all",
+            "command": "cd Release; /Applications/ti/ccs/utils/bin/gmake -k all",
             "presentation": {
                 "reveal": "always",
                 "panel": "shared"
