@@ -3,8 +3,8 @@
     {
       "name": "default",
       "includePath": [
-        "${workspaceFolder}/**",
         "/Applications/TI/ccs/tools/compiler/ti-cgt-arm_20.2.4.LTS/include",
+        "${workspaceFolder}/**",
         "~/ti/tivaware_c_series_2_1_4_178"
       ],
       "cStandard": "gnu17"
