@@ -1,7 +1,7 @@
 //*****************************************************************************
 //
 // Blink the onboard LED on PF3 using the SysTick interrupt handler.
-// Frequency: 0.5 Hz
+// Frequency 1 Hz
 // Date: 20-06-2021
 //
 //*****************************************************************************
@@ -54,9 +54,9 @@ static int main(void)
     GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, GPIO_PIN_3);
 
     //
-    // Configure and enable the SysTick counter for 200ms.
+    // Configure and enable the SysTick counter for 100ms.
     //
-    SysTickPeriodSet(16000000);
+    SysTickPeriodSet(8000000);
     SysTickIntRegister(sysTickInterruptHandler);
     SysTickEnable();
 
