@@ -2,6 +2,8 @@
 #include <driverlib/systick.h>
 #include "inc/tm4c123gh6pm.h"
 
+#include "cycles-counter.h"
+
 #define SYSTICK_PERIOD_MAX 16777216
 
 void CyclesCounter_InitSysTick(void)

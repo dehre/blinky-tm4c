@@ -6,8 +6,8 @@
 // Configure and enable the SysTick counter for 100ms.
 // The clock is assumed to run at 80MHz.
 //
-static void TimerSystickSetup(void);
+void TimerSystickSetup(void);
 
-static void TimerReset(void);
+void TimerReset(void);
 
-static void TimerWait1s(uint8_t times);
+void TimerWait1s(uint8_t times);

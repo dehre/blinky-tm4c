@@ -51,7 +51,7 @@ static int main(void)
 {
     SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
                    SYSCTL_XTAL_16MHZ);
-    UARTInit();
+    UART_Init();
 
     //
     // Configure Column 0..3 as inputs with internal weak pull-up resistors

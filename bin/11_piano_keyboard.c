@@ -67,7 +67,7 @@ static int main(void)
     // Set the clocking to run directly from the external crystal/oscillator.
     SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
                    SYSCTL_XTAL_16MHZ);
-    heartBeatInit();
+    HeartBeat_Init();
     gpioPeripheralsInit();
     SysTickIntRegister(sysTickInterruptHandler);
 
@@ -82,14 +82,14 @@ static int main(void)
             SysTickPeriodSet(SysCtlClockGet() / ((sizeof(sineWave) / sizeof(uint8_t)) * notePressed.frequency));
             sysTickCounterClear();
             SysTickEnable();
-            heartBeatSet();
+            HeartBeat_Set();
         }
 
         if (keyPressedBefore && keysPressed == 0x00)
         {
             keyPressedBefore = false;
             SysTickDisable();
-            heartBeatReset();
+            HeartBeat_Reset();
         }
     }
 }

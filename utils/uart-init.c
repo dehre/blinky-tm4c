@@ -14,7 +14,9 @@
 #include "driverlib/gpio.h"
 #include "utils/uartstdio.h"
 
-void UARTInit(void)
+#include "uart-init.h"
+
+void UART_Init(void)
 {
     //
     // Enable the peripherals used by this example.

@@ -20,7 +20,7 @@ static void __error__(char *pcFilename, uint32_t ui32Line)
 }
 #endif
 
-static int main()
+static int main(void)
 {
     volatile uint32_t ui32_loop;
 

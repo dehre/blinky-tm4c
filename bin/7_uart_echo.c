@@ -24,6 +24,7 @@
 #include "driverlib/uart.h"
 #include "driverlib/gpio.h"
 #include "utils/uartstdio.h"
+#include "uart-init.h"
 
 //
 // The error routine that is called if the driver library encounters an error.
@@ -36,8 +37,6 @@ void __error__(char *pcFilename, uint32_t ui32Line)
 }
 #endif
 
-static void UARTInit();
-
 static int main(void)
 {
     //
@@ -46,7 +45,7 @@ static int main(void)
     SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
                    SYSCTL_XTAL_16MHZ);
 
-    UARTInit();
+    UART_Init();
 
     //
     // Put a string to show start of example.
@@ -89,44 +88,4 @@ static int main(void)
     // Return no errors
     //
     return 0;
-}
-
-void UARTInit()
-{
-    //
-    // Enable the peripherals used by this example.
-    // The UART itself needs to be enabled, as well as the GPIO port
-    // containing the pins that will be used.
-    //
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_UART0);
-    SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOA);
-
-    //
-    // Configure the GPIO pin muxing for the UART function.
-    // This is only necessary if your part supports GPIO pin function muxing.
-    // Study the data sheet to see which functions are allocated per pin.
-    //
-    GPIOPinConfigure(GPIO_PA0_U0RX);
-    GPIOPinConfigure(GPIO_PA1_U0TX);
-
-    //
-    // Since GPIO A0 and A1 are used for the UART function, they must be
-    // configured for use as a peripheral function (instead of GPIO).
-    //
-    GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
-
-    //
-    // Configure the UART for 9600 baud rate, 8-N-1 operation.
-    // This function uses SysCtlClockGet() to get the system clock
-    // frequency.  This could be also be a variable or hard coded value
-    // instead of a function call.
-    //
-    UARTConfigSetExpClk(UART0_BASE, SysCtlClockGet(), 9600,
-                        (UART_CONFIG_WLEN_8 | UART_CONFIG_STOP_ONE |
-                         UART_CONFIG_PAR_NONE));
-
-    //
-    // Initialize the UART for console I/O.
-    //
-    UARTStdioConfig(0, 9600, SysCtlClockGet());
 }

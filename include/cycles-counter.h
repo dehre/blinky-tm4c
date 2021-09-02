@@ -15,9 +15,12 @@
 //     DoSomething();
 //     CyclesCounter_Push(clockCyclesDump, sizeof(clockCyclesDump) / sizeof(uint32_t));
 // }
-// ```c
+// ```
 //
 //*****************************************************************************
+
+#ifndef _CYCLES_COUNTER_H_
+#define _CYCLES_COUNTER_H_
 
 #include <stdint.h>
 
@@ -37,3 +40,5 @@ void CyclesCounter_Reset(void);
 // Returns 1 if the buffer is full.
 //
 uint8_t CyclesCounter_Push(uint32_t buffer[], uint32_t bufferLen);
+
+#endif

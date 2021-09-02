@@ -4,10 +4,15 @@
 //
 //*****************************************************************************
 
-void heartBeatInit(void);
+#ifndef _HEART_BEAT_H_
+#define _HEART_BEAT_H_
 
-void heartBeatSet(void);
+void HeartBeat_Init(void);
 
-void heartBeatReset(void);
+void HeartBeat_Set(void);
 
-void heartBeatToggle(void);
+void HeartBeat_Reset(void);
+
+void HeartBeat_Toggle(void);
+
+#endif
