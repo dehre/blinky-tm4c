@@ -5,6 +5,7 @@ blinky.launch
 org.*
 macros.ini_initial
 target_config.ccxml
+.DS_Store
 
 Debug/*
 Release/*
