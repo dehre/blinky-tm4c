@@ -37,7 +37,7 @@ void __error__(char *pcFilename, uint32_t ui32Line)
 }
 #endif
 
-static int main(void)
+int main(void)
 {
     //
     // Set the clocking to run directly from the external crystal/oscillator.

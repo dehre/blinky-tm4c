@@ -47,7 +47,7 @@ static const char KEYS[4][4] = {
     {'*', '0', '#', 'D'},
 };
 
-static int main(void)
+int main(void)
 {
     SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |
                    SYSCTL_XTAL_16MHZ);

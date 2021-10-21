@@ -22,7 +22,7 @@
 // The error routine that is called if the driver library encounters an error.
 //
 #ifdef DEBUG
-static void __error__(char *pcFilename, uint32_t ui32Line)
+void __error__(char *pcFilename, uint32_t ui32Line)
 {
     while (1)
         ;
@@ -39,7 +39,7 @@ static void SysTick_Wait(uint32_t delay);
 
 static void SysTick_Wait_10ms(uint32_t delay);
 
-static int main(void)
+int main(void)
 {
     //
     // Set the clocking to run directly from the crystal at 80MHz.
@@ -74,7 +74,7 @@ static int main(void)
     }
 }
 
-static void GPIOPinRead_WaitForTouch(uint32_t ui32Port, uint8_t ui8Pins)
+void GPIOPinRead_WaitForTouch(uint32_t ui32Port, uint8_t ui8Pins)
 {
     // Wait for release.
     while (GPIOPinRead(ui32Port, ui8Pins) != 0)
@@ -91,7 +91,7 @@ static void GPIOPinRead_WaitForTouch(uint32_t ui32Port, uint8_t ui8Pins)
 
 static volatile uint8_t count = 15;
 
-static uint8_t get_count()
+uint8_t get_count()
 {
     count += 1;
     if (count > 15)
@@ -101,7 +101,7 @@ static uint8_t get_count()
     return count;
 }
 
-static void SysTick_Init(void)
+void SysTick_Init(void)
 {
     NVIC_ST_CTRL_R = 0;
     NVIC_ST_RELOAD_R = 0x00FFFFFF;
@@ -109,7 +109,7 @@ static void SysTick_Init(void)
     NVIC_ST_CTRL_R = 0x05;
 }
 
-static void SysTick_Wait(uint32_t delay)
+void SysTick_Wait(uint32_t delay)
 {
     NVIC_ST_RELOAD_R = delay - 1;
     NVIC_ST_CURRENT_R = 0;
@@ -118,7 +118,7 @@ static void SysTick_Wait(uint32_t delay)
     }
 }
 
-static void SysTick_Wait_10ms(uint32_t delay)
+void SysTick_Wait_10ms(uint32_t delay)
 {
     uint32_t i;
     for (i = 0; i < delay; i++)

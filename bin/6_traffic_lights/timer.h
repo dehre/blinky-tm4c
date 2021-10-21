@@ -1,5 +1,6 @@
+#ifndef TIMER_H_INCLUDED
+#define TIMER_H_INCLUDED
 
-#pragma once
 #include <stdint.h>
 
 //
@@ -11,3 +12,5 @@ void TimerSystickSetup(void);
 void TimerReset(void);
 
 void TimerWait1s(uint8_t times);
+
+#endif

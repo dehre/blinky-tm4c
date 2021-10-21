@@ -62,7 +62,7 @@ static Keys keysRead(void);
 
 static Note keysToNote(Keys keysInput);
 
-static int main(void)
+int main(void)
 {
     // Set the clocking to run directly from the external crystal/oscillator.
     SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |

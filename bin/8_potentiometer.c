@@ -29,14 +29,14 @@
 // The error routine that is called if the driver library encounters an error.
 //
 #ifdef DEBUG
-void _error_(char *pcFilename, uint32_t ui32Line)
+void __error__(char *pcFilename, uint32_t ui32Line)
 {
     while (1)
         ;
 }
 #endif
 
-static int main(void)
+int main(void)
 {
     // Set the clocking to run directly from the external crystal/oscillator.
     SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN |

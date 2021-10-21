@@ -28,7 +28,7 @@ void __error__(char *pcFilename, uint32_t ui32Line)
 static void sysTickInterruptHandler(void);
 static uint8_t toggleBits(uint8_t bits);
 
-static int main(void)
+int main(void)
 {
     //
     // Set the clocking to run directly from the crystal at 80MHz.
@@ -68,7 +68,7 @@ static int main(void)
     }
 }
 
-static void sysTickInterruptHandler(void)
+void sysTickInterruptHandler(void)
 {
     static uint8_t current = 0;
     uint8_t TARGET = 5;
@@ -82,7 +82,7 @@ static void sysTickInterruptHandler(void)
     current = 0;
 }
 
-static uint8_t toggleBits(uint8_t bits)
+uint8_t toggleBits(uint8_t bits)
 {
     static uint8_t current = 0;
     current ^= bits;

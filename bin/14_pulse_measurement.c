@@ -69,7 +69,7 @@ static void Timer0PB6_FallingEdgeIntHandler(void);
 static void Timer0PB6_TimeoutIntHandler(void);
 static uint32_t Timer0PB6_TimeoutsCount = 0;
 
-static int main(void)
+int main(void)
 {
     SysCtlClockSet(SYSCTL_SYSDIV_2 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
     HeartBeat_Init();

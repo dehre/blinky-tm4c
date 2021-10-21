@@ -1,10 +1,13 @@
+#ifndef ASCII_H_INCLUDED
+#define ASCII_H_INCLUDED
+
 #include <stdint.h>
 
 #define ASCII_WIDTH 5
 
 // This table contains the hex values that represent pixels
 // for a font that is 5 pixels wide and 8 pixels high
-static const uint8_t ASCII[][ASCII_WIDTH] = {
+const uint8_t ASCII[][ASCII_WIDTH] = {
      {0x00, 0x00, 0x00, 0x00, 0x00} // 0x20
     ,{0x00, 0x00, 0x5f, 0x00, 0x00} // 0x21 !
     ,{0x00, 0x07, 0x00, 0x07, 0x00} // 0x22 "
@@ -103,3 +106,5 @@ static const uint8_t ASCII[][ASCII_WIDTH] = {
 //  ,{0x78, 0x46, 0x41, 0x46, 0x78} // 0x7f DEL
     ,{0x1f, 0x24, 0x7c, 0x24, 0x1f} // 0x7f UT sign
 };
+
+#endif

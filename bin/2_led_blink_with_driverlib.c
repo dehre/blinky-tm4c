@@ -17,14 +17,14 @@
 // The error routine that is called if the driver library encounters an error.
 //
 #ifdef DEBUG
-static void __error__(char *pcFilename, uint32_t ui32Line)
+void __error__(char *pcFilename, uint32_t ui32Line)
 {
     while (1)
         ;
 }
 #endif
 
-static int main(void)
+int main(void)
 {
     volatile uint32_t ui32Loop;
 

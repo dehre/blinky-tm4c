@@ -74,7 +74,7 @@ static const State_t states[] = {
      .Time = 1,
      .Next = {goNorth, goNorth, goNorth, goNorth}}};
 
-static int main(void)
+int main(void)
 {
     //
     // Setup the clock and the Systick timer.

@@ -51,7 +51,7 @@ void __error__(char *pcFilename, uint32_t ui32Line)
 }
 #endif
 
-static int main(void)
+int main(void)
 {
     SysCtlClockSet(SYSCTL_SYSDIV_1 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
     HeartBeat_Init();

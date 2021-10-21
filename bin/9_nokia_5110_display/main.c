@@ -55,7 +55,7 @@ static void Lcd_OutString(const char *str);
 
 static void Lcd_DrawBitmap(const uint8_t bmp[]);
 
-static int main(void)
+int main(void)
 {
     // Clock at 4MHz.
     SysCtlClockSet(SYSCTL_SYSDIV_4 | SYSCTL_USE_OSC | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
