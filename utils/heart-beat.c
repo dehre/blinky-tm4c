@@ -6,6 +6,13 @@
 
 #include "heart-beat.h"
 
+static bool pinValue = false;
+
+static void write(void)
+{
+    GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, pinValue ? GPIO_PIN_2 : 0);
+}
+
 void HeartBeat_Init(void)
 {
     SysCtlPeripheralEnable(SYSCTL_PERIPH_GPIOF);
@@ -16,22 +23,23 @@ void HeartBeat_Init(void)
 
 void HeartBeat_Set(void)
 {
-    GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, GPIO_PIN_2);
+    pinValue = true;
+    write();
 }
 
 void HeartBeat_Reset(void)
 {
-    GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, 0);
-}
-
-static uint32_t toggleBits(uint32_t bits)
-{
-    static uint32_t current = 0;
-    current ^= bits;
-    return current;
+    pinValue = false;
+    write();
 }
 
 void HeartBeat_Toggle(void)
 {
-    GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, toggleBits(GPIO_PIN_2));
+    pinValue = !pinValue;
+    write();
+}
+
+bool HeartBeat_GetPinValue(void)
+{
+    return pinValue;
 }

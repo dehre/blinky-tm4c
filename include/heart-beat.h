@@ -15,4 +15,6 @@ void HeartBeat_Reset(void);
 
 void HeartBeat_Toggle(void);
 
+bool HeartBeat_GetPinValue(void);
+
 #endif
