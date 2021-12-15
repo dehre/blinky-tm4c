@@ -8,7 +8,7 @@
 
 static bool pinValue = false;
 
-static void write(void)
+static inline void write(void)
 {
     GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_2, pinValue ? GPIO_PIN_2 : 0);
 }

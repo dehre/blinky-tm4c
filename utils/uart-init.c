@@ -16,8 +16,13 @@
 
 #include "uart-init.h"
 
+static bool isInitialized = false;
+
 void UART_Init(void)
 {
+    if (isInitialized)
+        return;
+
     //
     // Enable the peripherals used by this example.
     // The UART itself needs to be enabled, as well as the GPIO port
@@ -54,4 +59,6 @@ void UART_Init(void)
     // Initialize the UART for console I/O.
     //
     UARTStdioConfig(0, 9600, SysCtlClockGet());
+
+    isInitialized = true;
 }
