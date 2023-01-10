@@ -39,3 +39,7 @@ Hibernation module see a normal "power on" sequence and the processor starts run
 Software can determine if the microcontroller has been restarted from Hibernate mode by inspecting
 the Hibernation module registers.
 The Hibernation module can be independently supplied from an external battery or an auxiliary power supply.
+
+## Circuit
+
+<img src="./circuit.svg" width=70% height=70%>
