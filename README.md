@@ -5,7 +5,7 @@ The board features a 80-MHz Arm Cortex-M4F CPU, 256kB of flash, 32kB of SRAM, an
 
 [Project 11](projects/11_piano_keyboard), a 6-bit binary-weighted DAC:
 
-<img src="readme_assets/piano-keyboard.jpeg" width=70% height=70%>
+<img src="readme_assets/piano-keyboard.jpeg" width=75% height=75%>
 
 Project 11 [on YouTube](https://www.youtube.com/shorts/_X9xUjwxpHI)
 
@@ -28,9 +28,9 @@ If an external circuit is required, you can generally find the circuit's diagram
 
 Some of the projects you see here are inspired from these books, which I highly recommend:
 
-* "Introduction to ARM Cortex-M Microcontrollers", by Jonathan W. Valvano - ISBN 978-1477508992
-* "Real-Time Interfacing to ARM Cortex-M Microcontrollers", by Jonathan W. Valvano - ISBN 978-1463590154
-* "Real-Time Operating Systems for ARM Cortex-M Microcontrollers", by Jonathan W. Valvano - ISBN 978-1466468863
+* [Introduction to ARM Cortex-M Microcontrollers](https://www.amazon.com/Embedded-Systems-Introduction-CortexTM-M-Microcontrollers/dp/1477508996/ref=sr_1_1), by Jonathan W. Valvano - ISBN 978-1477508992
+* [Real-Time Interfacing to ARM Cortex-M Microcontrollers](https://www.amazon.com/Embedded-Systems-Real-Time-Interfacing-Microcontrollers/dp/1463590156/ref=sr_1_1), by Jonathan W. Valvano - ISBN 978-1463590154
+* [Real-Time Operating Systems for ARM Cortex-M Microcontrollers](https://www.amazon.com/Embedded-Systems-Real-Time-Operating-Microcontrollers/dp/1466468866/ref=sr_1_1), by Jonathan W. Valvano - ISBN 978-1466468863
 
 These books did a great job at showcasing the features available on the ARM Cortex-M4F processor, and at making the official datasheet more accessible.
 
