@@ -7,7 +7,7 @@ The board features a 80-MHz Arm Cortex-M4F CPU, 256kB of flash, 32kB of SRAM, an
 
 <img src="readme_assets/piano-keyboard.jpeg" width=70% height=70%>
 
-The same project [on YouTube](https://www.youtube.com/shorts/_X9xUjwxpHI)
+Project 11 [on YouTube](https://www.youtube.com/shorts/_X9xUjwxpHI)
 
 ## Overview
 
@@ -35,7 +35,7 @@ Some of the projects you see here are inspired from these books, which I highly 
 These books did a great job at showcasing the features available on the ARM Cortex-M4F processor, and at making the official datasheet more accessible.
 
 If you'll pick up the books, however, you'll notice that the code style differs significantly.  
-In short, Prof. Valvano favored direct registers manipulation, while I favored the [TivaWare™ Peripheral Driver Library](https://www.ti.com/lit/ug/spmu298e/spmu298e.pdf).  
+In short, Prof. Valvano favored [direct registers manipulation](https://blog.feabhas.com/2019/01/peripheral-register-access-using-c-structs-part-1/), while I favored the [TivaWare™ Peripheral Driver Library](https://www.ti.com/lit/ug/spmu298e/spmu298e.pdf).  
 There are of course advantages and disadvantages to each approach.  
 Direct registers manipulation forces you to dig deep into the [processor's datasheet](https://www.ti.com/lit/ds/spms376e/spms376e.pdf) (1411 pages) and get very intimate with it, which is good for learning.  
 On the other hand, this approach is very error prone and leads to non-portable and hard to read code.  
